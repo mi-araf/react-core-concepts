@@ -9,12 +9,24 @@ function App() {
         { productName: "Abode PDF Editor", productPrice: "$25.29" },
         { productName: "PDF Viewr", productPrice: "$16.69" },
     ];
+    const creams = [
+        { creamsName: "chocolate", creamsPrice: "$3" },
+        { creamsName: "mango", creamsPrice: "$4" },
+        { creamsName: "vanilla", creamsPrice: "$9" },
+        { creamsName: "lemon", creamsPrice: "$2" },
+    ];
 
     return (
         <div className="App">
             <header className="App-header">
                 <p>I'm a React Person</p>
                 {/* load dynamic data from serever/API */}
+                {creams.map((cream) => (
+                    <Product
+                        name={cream.creamsName}
+                        price={cream.creamsPrice}
+                    />
+                ))}
                 <Users />
                 <Counter /> <br />
                 {products.map((eachProduct) => (
